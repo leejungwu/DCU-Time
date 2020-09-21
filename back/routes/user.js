@@ -40,9 +40,9 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
     })(req, res, next);
 });
 
-router.post('/', isNotLoggedIn, async (req, res, next) => {
+router.post('/', isNotLoggedIn, async (req, res, next) => {  //회원가입
     try {
-        const exUser = await User.findOne({
+        const exUser = await User.findOne({  //중복체크
             where: {
                 email: req.body.email,
             }
@@ -51,7 +51,7 @@ router.post('/', isNotLoggedIn, async (req, res, next) => {
             return res.status(403).send('이미 사용 중인 아이디입니다.');
         }
         const hashedPassword = await bcrypt.hash(req.body.password, 12);
-        await User.create({
+        await User.create({  // db 저장
             email: req.body.email,
             nickname: req.body.nickname,
             password: hashedPassword,

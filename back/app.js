@@ -20,9 +20,10 @@ db.sequelize.sync()
 passportConfig();
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3060',
     credentials: true,
 })); 
+
 app.use(express.json());   //router에서 req.body 쓰기위해서 (app.use는 익스프레스서버에 뭔가를 장착하는것)
 app.use(express.urlencoded({ extended: true }));    //router에서 req.body 쓰기위해서    
 app.use(cookieParser(process.env.COOKIE_SECRET));

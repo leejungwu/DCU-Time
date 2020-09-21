@@ -59,7 +59,7 @@ function* logOut() {
 }
 
 function signUpAPI(data) {
-  return axios.post('/user', data);
+  return axios.post('/user', data);  // 브라우저에서 백엔드로 요청
 }
 
 function* signUp(action) {
