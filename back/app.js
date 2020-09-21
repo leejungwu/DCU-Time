@@ -21,8 +21,6 @@ passportConfig();
 
 app.use(cors({
     origin: 'http://localhost:3060', 
-
-    
     credentials: true,
 })); 
 
