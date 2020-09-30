@@ -7,7 +7,7 @@ import wrapper from '../store/configureStore';
 const NodeBird = ({ Component }) => (
   <>
     <Head>
-      <title>NodeBird</title>
+      <title>DCU타임</title>
     </Head>
     <Component />
   </>

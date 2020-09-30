@@ -81,6 +81,35 @@ router.post('/images', isLoggedIn, upload.array('image'), (req, res, next) => { 
   res.json(req.files.map((v) => v.filename));
 });
 
+router.get('/:postId', async (req, res, next) => {
+  try {
+    const post = await Post.findOne({
+      where: { id: req.params.postId },
+      include: [{
+        model: User,
+        attributes: ['id', 'nickname'],
+      }, {
+        model: Image,
+      }, {
+        model: Comment,
+        include: [{
+          model: User,
+          attributes: ['id', 'nickname'],
+          order: [['createdAt', 'DESC']],
+        }],
+      }, {
+        model: User, // 좋아요 누른 사람
+        as: 'Likers',
+        attributes: ['id'],
+      }],
+    });
+    res.status(200).json(post);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
 router.post('/:postId/retweet', isLoggedIn, async (req, res, next) => { // POST /post/1/retweet
   try {
     const post = await Post.findOne({
@@ -125,6 +154,10 @@ router.post('/:postId/retweet', isLoggedIn, async (req, res, next) => { // POST 
       }, {
         model: User,
         attributes: ['id', 'nickname'],
+      }, {
+        model: User, // 좋아요 누른 사람
+        as: 'Likers',
+        attributes: ['id'],
       }, {
         model: Image,
       }, {
