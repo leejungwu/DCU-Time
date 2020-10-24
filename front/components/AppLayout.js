@@ -33,7 +33,6 @@ const AppLayout = ({ children }) => {
         </Menu.Item>
         <Menu.Item>
           <SearchInput
-            enterButton
             value={searchInput}
             onChange={onChangeSearchInput}
             onSearch={onSearch}
@@ -41,14 +40,14 @@ const AppLayout = ({ children }) => {
         </Menu.Item>
       </Menu>
       <Row gutter={8}>
-        <Col xs={24} md={6}>
-          {me ? <UserProfile /> : <LoginForm />}
+        <Col xs={20} md={5}>
+          <a target="_blank" rel="noreferrer noopener">팀 현미밥</a>
         </Col>
-        <Col xs={24} md={12}>
+        <Col xs={26} md={13}>
           {children}
         </Col>
-        <Col xs={24} md={6}>
-          <a target="_blank" rel="noreferrer noopener">팀 현미밥</a>
+        <Col xs={26} md={6}>
+          {me ? <UserProfile /> : <LoginForm />}
         </Col>
       </Row>
     </div>

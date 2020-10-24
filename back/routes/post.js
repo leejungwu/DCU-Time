@@ -246,3 +246,4 @@ router.delete('/:postId', isLoggedIn, async (req, res, next) => { // DELETE /pos
 });
 
 module.exports = router;
+
