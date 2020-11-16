@@ -41,7 +41,7 @@ const AppLayout = ({ children }) => {
       </Menu>
       <Row gutter={8}>
         <Col xs={20} md={5}>
-          <a target="_blank" rel="noreferrer noopener">ljw538</a>
+          <a href="http://www.jungwooblog.com" target="_blank" rel="noreferrer noopener">Made by jungwoo</a>
         </Col>
         <Col xs={26} md={13}>
           {children}
