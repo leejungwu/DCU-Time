@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "start": "cross-env NODE_ENV=production pm2 start app"
   },
   "author": "leejungwoo",
   "license": "MIT",
@@ -13,10 +14,11 @@
     "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "helmet": "^3.23.2",
+    "helmet": "^3.23.3",
     "hpp": "^0.2.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
@@ -24,6 +26,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
+    "pm2": "^4.5.0",
     "sequelize": "^6.1.0",
     "sequelize-cli": "^6.0.0"
   },
