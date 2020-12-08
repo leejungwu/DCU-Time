@@ -15,6 +15,7 @@ const userRouter = require('./routes/user');
 const hashtagRouter = require('./routes/hashtag');
 const db = require('./models');
 const passportConfig = require('./passport');
+const { ENGINE_METHOD_NONE } = require('constants');
 
 dotenv.config();
 const app = express();
@@ -34,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use(cors({
-  origin: ['http://localhost:3060','dcutime.com', 'http://54.180.155.219'],
+  origin: ['http://localhost:3060','dcutime.shop'],
   credentials: true,
 }));
 app.use('/', express.static(path.join(__dirname, 'uploads')));
@@ -45,6 +46,12 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   secret: process.env.COOKIE_SECRET,
+  cookie: {
+    httpOnly: true,
+    secure: false,
+    sameSite: "none",
+    domain: process.env.NODE_ENV === 'production' && '.dcutime.shop'
+  },
 }));
 app.use(passport.initialize());
 app.use(passport.session());
