@@ -53,7 +53,6 @@ app.use(session({
   cookie: {
     httpOnly: true,
     secure: false,
-    sameSite: "none",
     domain: process.env.NODE_ENV === 'production' && '.dcutime.shop'
   },
 }));
