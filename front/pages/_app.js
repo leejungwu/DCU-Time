@@ -11,7 +11,7 @@ const NodeBird = ({ Component }) => (
       <title>DCU타임</title>
       <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="referrer" content="no-referrer-when-downgrade" />
-      <meta name="referrer" content="strict-origin-when-cross-origin" />
+
     </Head>
     <Component />
   </>
