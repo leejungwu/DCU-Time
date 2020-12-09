@@ -26,7 +26,9 @@ db.sequelize.sync()
   .catch(console.error);
 passportConfig();
 
+
 if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
   app.use(morgan('combined'));
   app.use(hpp());
   app.use(helmet.referrerPolicy({ policy: 'strict-origin-when-cross-origin' }))
@@ -50,6 +52,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   secret: process.env.COOKIE_SECRET,
+  proxy: true,
   cookie: {
     httpOnly: true,
     secure: true,
