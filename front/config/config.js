@@ -1,1 +1,1 @@
-export const backUrl = process.env.NODE_ENV === 'production' ? "http://api.dcutime.shop" : 'http://dcutime.shop';
+export const backUrl = 'http://api.dcutime.shop';
