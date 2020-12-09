@@ -29,9 +29,6 @@ const AppLayout = ({ children }) => {
           <Link href="/"><a>DCU-time</a></Link>
         </Menu.Item>
         <Menu.Item>
-          <Link href="/profile"><a>프로필</a></Link>
-        </Menu.Item>
-        <Menu.Item>
           <SearchInput
             value={searchInput}
             onChange={onChangeSearchInput}
