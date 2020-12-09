@@ -24,7 +24,7 @@ const Post = () => {
     <AppLayout>
       <Head>
         <title>
-          {singlePost.User.nickname}
+          {singlePost.User.nick:::::q:q::assdaf::name}
           님의 글
         </title>
         <meta name="description" content={singlePost.content} />
