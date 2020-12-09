@@ -54,7 +54,7 @@ app.use(session({
   proxy: true,
   cookie: {
     httpOnly: true,
-    secure: false,
+    secure: True,
     domain: process.env.NODE_ENV === 'production' && '.dcutime.shop'
   },
 }));
