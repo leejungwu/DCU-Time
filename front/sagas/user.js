@@ -48,7 +48,7 @@ function* removeFollower(action) {
 }
 
 function loadFollowersAPI(data) {
-  return axios.get('http://api.dcutime.shop/user/followers', data);
+  return axios.get('/user/followers', data);
 }
 
 function* loadFollowers(action) {
@@ -68,7 +68,7 @@ function* loadFollowers(action) {
 }
 
 function loadFollowingsAPI(data) {
-  return axios.get('http://api.dcutime.shop/user/followings', data);
+  return axios.get('/user/followings', data);
 }
 
 function* loadFollowings(action) {
