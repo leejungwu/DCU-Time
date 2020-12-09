@@ -8,6 +8,7 @@ import wrapper from '../store/configureStore';
 const NodeBird = ({ Component }) => (
   <>
     <Head>
+      <meta charSet="utf-8" />
       <title>DCU타임</title>
       <link rel="shortcut icon" href="/favicon.ico" />
 
