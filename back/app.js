@@ -31,9 +31,9 @@ if (process.env.NODE_ENV === 'production') {
   app.set('trust proxy', 1);
   app.use(morgan('combined'));
   app.use(hpp());
-  app.use(helmet.referrerPolicy({ policy: 'strict-origin-when-cross-origin' }))
+  app.use(helmet())
   app.use(cors({
-    origin: 'http://dcutime.shop',
+    origin: 'https://dcutime.shop',
     credentials: true,
   }));
 } else {
