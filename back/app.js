@@ -51,6 +51,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
   saveUninitialized: false,
   resave: false,
+  secure: true,
   secret: process.env.COOKIE_SECRET,
   proxy: true,
   cookie: {
